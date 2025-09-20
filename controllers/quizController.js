@@ -47,9 +47,6 @@ module.exports.submit = wrapAsync(async (req, res) => {
 
   await user.save();
 
-  console.log(user);
-  console.log(quizResult);
-
   res.status(200).json({
     success: true,
     message: "Quiz submitted successfully",

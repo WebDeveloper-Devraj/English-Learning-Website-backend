@@ -32,6 +32,7 @@ mongoose
 
 app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/quiz", require("./routes/quizRoutes"));
+app.use("/api/contact", require("./routes/contactRoutes"));
 
 app.use("*", (req, res, next) => {
   throw new ExpressError(404, "API route Not Found!");
@@ -46,6 +47,7 @@ app.use((err, req, res, next) => {
     status = 400;
   }
   console.log("error middleware: ", err.message);
+  console.log("error stack: ", err.stack);
 
   // Other errors
   res.status(status).send({ success: false, message });

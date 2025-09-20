@@ -3,9 +3,13 @@ const { Schema } = mongoose;
 
 const questionSchema = new Schema({
   question: String,
+  type: String,
   text: String,
   options: [String],
-  correctAnswer: Number, // store index of correct option
+  correctAnswer: {
+    type: Schema.Types.Mixed, // can be string or number
+    required: true,
+  },
   explanation: String,
 });
 

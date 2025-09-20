@@ -8,7 +8,7 @@ const quizResultSchema = new Schema({
   selectedAnswers: [
     {
       questionId: { type: Schema.Types.ObjectId, required: true },
-      selectedOption: { type: Number, required: true },
+      selectedOption: { type: Schema.Types.Mixed, required: true },
     },
   ],
   score: { type: Number, required: true },

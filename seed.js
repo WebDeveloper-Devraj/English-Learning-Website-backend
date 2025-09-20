@@ -7,6 +7,10 @@ mongoose
   .then(async () => {
     console.log("Connected to DB");
 
+    // delete existing quizzes
+    await Quiz.deleteMany({});
+    console.log("existing quizzes deleted");
+
     // Insert data
     await Quiz.insertMany(quizzes);
     console.log("Quizzes inserted successfully!");
