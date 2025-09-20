@@ -3,7 +3,10 @@ const Quiz = require("./models/Quiz"); // path to your Quiz model
 const quizzes = require("./quizData");
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/english_learning", {})
+  .connect(
+    "mongodb+srv://devrajpujari292_db_user:REpq94a7oh1pbY4b@englishlearningcluster.yp4yisf.mongodb.net/english_learning?retryWrites=true&w=majority&appName=EnglishLearningCluster",
+    {}
+  )
   .then(async () => {
     console.log("Connected to DB");
 
